@@ -60,17 +60,17 @@ public class TransferTest {
         transferPage.transferCancel();
     }
 
-//    @Test
-//    void shouldTransferMoreThanAllFromFirstCard() {
-//        val loginPage = open("http://localhost:9999", LoginPage.class);
-//        val authInfo = DataHelper.getAuthInfo();
-//        val verificationPage = loginPage.validLogin(authInfo);
-//        val verificationCode = DataHelper.getVerificationCodeFor(authInfo);
-//        val dashboardPage = verificationPage.validVerify(verificationCode);
-//        val transferPage = dashboardPage.secondCardDeposit();
-//        int amount = 24500;
-//        transferPage.transferMoney(amount, DataHelper.getFirstCardNumber());
-//        transferPage.failedTransfer();
-//    }
+    @Test
+    void shouldTransferMoreThanAllFromFirstCard() {
+        val loginPage = open("http://localhost:9999", LoginPage.class);
+        val authInfo = DataHelper.getAuthInfo();
+        val verificationPage = loginPage.validLogin(authInfo);
+        val verificationCode = DataHelper.getVerificationCodeFor(authInfo);
+        val dashboardPage = verificationPage.validVerify(verificationCode);
+        val transferPage = dashboardPage.secondCardDeposit();
+        int amount = 24500;
+        transferPage.transferMoney(amount, DataHelper.getFirstCardNumber());
+        transferPage.failedTransfer();
+    }
 
 }
